@@ -40,9 +40,25 @@
     ; rdfs:label "hello, resource"
 .</programlisting>
 
-<para><emphasis>helloworld.xhtml</emphasis> is nearly identical in content to <emphasis>helloworld.html</emphasis>. The difference is that <emphasis>helloworld.xhtml</emphasis> is serialized as XHTML, associated with a class and passes through the Callimachus evaluation process prior to being served - because it is being used as a view template to another resource (in this case, the HelloWorld class).</para>
+<para><emphasis>helloworld.xhtml</emphasis> is nearly identical in content to <emphasis>helloworld.html</emphasis>. The difference is that <emphasis>helloworld.xhtml</emphasis> is serialized as XHTML, associated with a class and passes through the Callimachus evaluation process prior to being served - because it is being used as a view template to another resource (in this case, the HelloWorld class). helloworld.xhtml contains:</para>
 
-<para>An HTTP request for <link xl:href="hello+resource">hello+resource</link> (to the full URL, e.g. http://localhost:8080/helloworld/hello+resource) will result in Callimachus looking at its RDF to determine if that resource is associated with a class that uses a view template. Seeing that it is, Callimachus will serve the file using the template <emphasis>helloworld.xhtml</emphasis> and you should see "Hello, World!" in your Web client.</para>
+<programlisting>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello, World!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body resource="?this"&gt;
+    &lt;div class="container"&gt;
+        &lt;p&gt;{rdfs:label} from XHTML Template!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</programlisting>
+
+<para>An HTTP request for <link xl:href="hello+resource">hello+resource</link> (to the full URL, e.g. http://localhost:8080/helloworld/hello+resource) will result in Callimachus looking at its RDF to determine if that resource is associated with a class that uses a view template. Seeing that it is, Callimachus will serve the file using the template <emphasis>helloworld.xhtml</emphasis> and you should see "Hello, resource from XHTML Template!" in your Web client.</para>
+
+<para>Notice here how by viewing this data via the HelloClass view template (<emphasis>helloworld.xhtml</emphasis>), Callimachus replaced the string "{rdfs:label}" with the actual value of the {rdfs:label} property from the data! In this way we can use one template to display information about many diferent resources. </para>
 
 <para>Try creating own class and view template and associate your own resources to your class. Remember that you can make your HTML look pretty simply by adding a CSS stylesheet reference to it.</para>
 </section></article>

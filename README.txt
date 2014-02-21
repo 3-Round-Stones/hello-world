@@ -44,6 +44,22 @@ helloworld.ttl tells Callimachus that the resource hello+resource is an instance
 
 helloworld.xhtml is nearly identical in content to helloworld.html. The difference is that helloworld.xhtml is serialized as XHTML, associated with a class and passes through the Callimachus evaluation process prior to being served - because it is being used as a view template to another resource (in this case, the HelloWorld class).
 
+[[
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello, World!</title>
+</head>
+<body resource="?this">
+    <div class="container">
+        <p>{rdfs:label} from XHTML Template!</p>
+    </div>
+</body>
+</html>
+]]
+
 An HTTP request for hello+resource (to the full URL, e.g. http://localhost:8080/helloworld/hello+resource) will result in Callimachus looking at its RDF to determine if that resource is associated with a class that uses a view template. Seeing that it is, Callimachus will serve the file using the template helloworld.xhtml and you should see "Hello, World!" in your Web client.
+
+Notice here how by viewing this data via the HelloClass view template (helloworld.xhtml), Callimachus replaced the string "{rdfs:label}" with the actual value of the {rdfs:label} property from the data! In this way we can use one template to display information about many diferent resources. 
 
 Try creating own class and view template and associate your own resources to your class. Remember that you can make your HTML look pretty simply by adding a CSS stylesheet reference to it.
