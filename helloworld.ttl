@@ -1,0 +1,8 @@
+@prefix calli:<http://callimachusproject.org/rdf/2009/framework#>.
+@prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>.
+
+# directory alias
+<./> calli:describedby "index.docbook?view".
+
+# Create a resource with a label
+<hello+resource> a <HelloClass>; rdfs:label "hello resource".
