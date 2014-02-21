@@ -4,7 +4,7 @@
 
 This is a simple introductory application demonstrating how view templates are associated with RDF resources.
 
-  1. Access the Home Folder my clicking the main menu in the upper right and selecting "Home folder"
+  1. Access the Home Folder by clicking the main menu in the upper right and selecting "Home folder"
   2. From there, select the red "Create" dropdown and choose "Folder".
   3. Name your folder and click "Create".
   4. Click the main menu and select "Import folder contents"
