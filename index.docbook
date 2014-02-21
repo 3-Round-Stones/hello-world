@@ -25,7 +25,7 @@
 
 <para>That's useful, but not so interesting. Now let's see how Callimachus processes requests for other resources. The <link xl:href="HelloClass">HelloClass</link> is a Callimachus Class with an associated view template of <link xl:href="helloworld.xhtml"><emphasis>helloworld.xhtml</emphasis></link>. Note the extension here is Xhtml, not plain html.</para>
 
-<para><link xl:href="http://helloworld.ttl"><emphasis>helloworld.ttl</emphasis></link> is an RDF file in Turtle syntax. See the following URL for information about the Turtle format:</para>
+<para><link xl:href="helloworld.ttl"><emphasis>helloworld.ttl</emphasis></link> is an RDF file in Turtle syntax. See the following URL for information about the Turtle format:</para>
 
 <para><link xl:href="http://www.w3.org/TeamSubmission/turtle/">http://www.w3.org/TeamSubmission/turtle/</link></para>
 
@@ -37,12 +37,12 @@
 
 # Create a resource with a label
 &lt;hello+resource&gt; a &lt;HelloClass&gt;
-    ; rdfs:label "hello resource"
+    ; rdfs:label "hello, resource"
 .</programlisting>
 
 <para><emphasis>helloworld.xhtml</emphasis> is nearly identical in content to <emphasis>helloworld.html</emphasis>. The difference is that <emphasis>helloworld.xhtml</emphasis> is serialized as XHTML, associated with a class and passes through the Callimachus evaluation process prior to being served - because it is being used as a view template to another resource (in this case, the HelloWorld class).</para>
 
-<para>An HTTP request for hello+resource (to the full URL, e.g. http://localhost:8080/helloworld/hello+resource) will result in Callimachus looking at its RDF to determine if that resource is associated with a class that uses a view template. Seeing that it is, Callimachus will serve the file using the template <emphasis>helloworld.xhtml</emphasis> and you should see "Hello, World!" in your Web client.</para>
+<para>An HTTP request for <link xl:href="hello+resource">hello+resource</link> (to the full URL, e.g. http://localhost:8080/helloworld/hello+resource) will result in Callimachus looking at its RDF to determine if that resource is associated with a class that uses a view template. Seeing that it is, Callimachus will serve the file using the template <emphasis>helloworld.xhtml</emphasis> and you should see "Hello, World!" in your Web client.</para>
 
 <para>Try creating own class and view template and associate your own resources to your class. Remember that you can make your HTML look pretty simply by adding a CSS stylesheet reference to it.</para>
 </section></article>
