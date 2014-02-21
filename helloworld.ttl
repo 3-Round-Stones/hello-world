@@ -5,4 +5,6 @@
 <./> calli:describedby "index.docbook?view".
 
 # Create a resource with a label
-<hello+resource> a <HelloClass>; rdfs:label "hello resource".
+<hello+resource> a <HelloClass>
+    ; rdfs:label "Hello, resource"
+.
